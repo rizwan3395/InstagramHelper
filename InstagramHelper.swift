@@ -53,7 +53,7 @@ class InstagramHelper: NSObject, UIDocumentInteractionControllerDelegate {
                         print("write image failed")
                     }
                 }
-    //            let rect = CGRect(x: 0, y: 0, width: 612, height: 612)
+                
                 let fileURL = NSURL.fileURL(withPath: jpgPath)
                 self.documentInteractionController.url = fileURL
                 self.documentInteractionController.delegate = self
