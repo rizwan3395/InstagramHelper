@@ -1,6 +1,5 @@
 //
 //  InstagramHelper.swift
-//  CountryNaturalBeef
 //
 //  Created by Muhamad Rizwan on 09/11/2018.
 //  Copyright © 2018 Muhamad Rizwan. All rights reserved.
