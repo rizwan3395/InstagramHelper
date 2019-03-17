@@ -66,8 +66,22 @@ class InstagramHelper: NSObject, UIDocumentInteractionControllerDelegate {
             } else {
                 
                 // alert displayed when the instagram application is not available in the device
-                Utility.showAlert("", message: self.kAlertViewMessage, controller: controller)
+                showAlert("", message: self.kAlertViewMessage, controller: controller)
             }
         }
+    }
+    
+   func showAlert(_ title: String, message: String, controller : UIViewController){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action -> Void in
+            //Just dismiss the action sheet
+            let selector: Selector = NSSelectorFromString("alertOkButtonHandler")
+            if controller.responds(to: selector){
+                _ = controller.perform(selector)
+            }
+        })
+        alert.addAction(okAction)
+        controller.present(alert, animated: true, completion: nil)
     }
 }
